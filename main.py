@@ -2,8 +2,8 @@ print("Ez egy könytarkezelő program")
 
 x = 0
 
-x = None  # Kezdeti érték
-while x not in [1, 2, 3]:  # Csak akkor lép tovább, ha 1, 2, vagy 3
+x = None
+while x not in [1, 2, 3]:
     print("1. Adminisztráció")
     print("2. Böngészés")
     print("3. Kilépés")

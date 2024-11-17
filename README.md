@@ -1,3 +1,5 @@
+Könyvtárkezelő program
+
 A program fájlstruktúrája
 Mappaszerkezet:
 main.py - A program belépési pontja (Felhasználói felület modul)

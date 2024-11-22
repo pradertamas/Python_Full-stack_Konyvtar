@@ -1,3 +1,6 @@
+import adatfeldolgozas
+import adatkezelo
+
 print("Ez egy könytarkezelő program")
 
 x = None
@@ -35,8 +38,13 @@ while x not in [1, 2, 3]:
         
         if y == 1:
             y = None
-            print ("Beléptél az Új könyv felvétele menübe")
-
+            print("Beléptél az Új könyv felvétele menübe")
+            cim = input("Add meg a könyv címét: ")
+            szerzo = input("Add meg a könyv szerzőjét: ")
+            ev = int(input("Add meg a könyv kiadásának évét: "))
+            kategoria = input("Add meg a könyv kategóriáját: ")
+            adatkezelo.ujkonyv(cim, szerzo, ev, kategoria)
+            
         if y == 2:
             y = None
             print("Beléptél az Könyvtári könyvek lekérdezései menübe")

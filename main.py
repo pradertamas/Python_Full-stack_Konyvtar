@@ -57,7 +57,7 @@ while True:
                 elif valasztas == "4":
                     kategoria = input("Add meg a keresett könyv kategóriáját: ")
                 elif valasztas == "5":
-                    print("Visszaléptél a Főmenűbe!és")
+                    print("Visszaléptél a Főmenűbe!")
                     break
                 else:
                     print("Érvénytelen választás, próbáld újra!")

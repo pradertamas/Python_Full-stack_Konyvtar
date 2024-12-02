@@ -4,7 +4,7 @@ def ujkonyv(cim, szerzo, ev, kategoria):
     print(f"Cím: {cim} Szerző: {szerzo} Kiadás éve: {ev} Kategória: {kategoria}")
     
     konyv_adatok = [cim, szerzo, ev, kategoria]
-    file = open("Python_Full-stack_Konyvtar/konyvek.csv", "a")
+    file = open("konyvek.csv", "a")
     i = 0
     while i < len(konyv_adatok):
         # Írás a fájlba

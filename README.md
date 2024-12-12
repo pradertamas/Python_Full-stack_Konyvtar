@@ -5,7 +5,6 @@ Könyvtári könyvek nyilvántartása:
 - új könyvek rögzítése
 - könyvtári könyvek közötti keresés különböző kategóriákban
 - elveszett/megsemmisült példányok jelölhetősége
-- 
 
 A program fájlstruktúrája
 Mappaszerkezet:
@@ -15,7 +14,7 @@ adatkezelo.py - Az adatkezelő logika
 konyvek.csv - Az adatok tárolása
 
 Modulok és funkciók
-1. Felhasználói felület (UI modul)
+1. Felhasználói felület (UI modul) (Práder Tamás)
 Ez a modul kezeli az interakciót a felhasználóval. Meg kell jeleníteni a menüt, be kell kérni az adatokat, és továbbítani kell azokat az adatfeldolgozó modulnak. A válaszokat vissza kell adni a felhasználónak.
 
 Feladatok:

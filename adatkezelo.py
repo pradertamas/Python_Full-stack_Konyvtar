@@ -13,4 +13,4 @@ def ujkonyv(cim, szerzo, ev, kategoria):
         i += 1
 
     # Fájl bezárása
-    file.close()        
+    file.close()

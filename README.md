@@ -1,5 +1,12 @@
 Könyvtárkezelő program
 
+A program feladata:
+Könyvtári könyvek nyilvántartása:
+- új könyvek rögzítése
+- könyvtári könyvek közötti keresés különböző kategóriákban
+- elveszett/megsemmisült példányok jelölhetősége
+- 
+
 A program fájlstruktúrája
 Mappaszerkezet:
 main.py - A program belépési pontja (Felhasználói felület modul)
@@ -14,7 +21,6 @@ Ez a modul kezeli az interakciót a felhasználóval. Meg kell jeleníteni a men
 Feladatok:
 
 Menü megjelenítése: Ki kell írni a menü opcióit a print() függvény segítségével.
-Input ellenőrzése: Ellenőrizni kell, hogy a felhasználó helyes adatokat adjon meg (pl. egész számot vagy boolean értéket).
 Visszacsatolás megjelenítése: Meg kell jeleníteni az adatfeldolgozó modul által visszaadott adatokat.
 2. Adatfeldolgozó modul
 Ez a modul felelős az adatok validálásáért, feldolgozásáért és az adatkezelő modul hívásáért. Az adatokat vissza kell adni a felhasználói felület modulnak feldolgozás után.

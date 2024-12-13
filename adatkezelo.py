@@ -14,3 +14,24 @@ def ujkonyv(cim, szerzo, ev, kategoria):
 
     # Fájl bezárása
     file.close()
+
+
+def konyvtar_lista():
+
+    konyv_lista=[]
+
+    with open("konyvek.csv","r", encoding="utf-8") as f:
+        sorok=f.read().splitlines()
+        for sor in sorok[1::]:
+            adat=sor.strip().split(",")
+            
+            konyvtar={}
+            konyvtar["cim"]=adat[0]
+            konyvtar["szerzo"]=adat[1]
+            konyvtar["ev"]=int(adat[2])
+            konyvtar["kategoria"]=adat[3]
+            konyvtar["torolve"]=int(adat[4])
+            
+            konyv_lista.append(konyvtar)
+
+    return konyv_lista

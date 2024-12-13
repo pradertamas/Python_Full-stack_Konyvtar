@@ -2,6 +2,7 @@ import adatfeldolgozas
 import adatkezelo
 
 print("Ez egy könytarkezelő program")
+print("")
 
 while True:
         print("1. Adminisztráció")
@@ -11,16 +12,18 @@ while True:
         
         if valasztas == "1":
             print ("Beléptél az Admin menübe")
+            print("")
             
             while True:
                 print("1. Új könyv felvétele")
-                print("2. Könyvtári könyvek lekérdezései")
+                print("2. Könyvtári könyvek lekérdezése")
                 print("3. Állományból törlés")
                 print("4. Visszalépés")                
                 valasztas = input("Válassz a fenti menüpontokból: ")
 
                 if valasztas == "1":
                     print ("Beléptél az Új könyv felvétele menübe")
+                    print("")
                     cim = input("Add meg a könyv címét: ")
                     szerzo = input("Add meg a könyv szerzőjét: ")
                     ev = int(input("Add meg a könyv kiadásának évét: "))
@@ -28,46 +31,32 @@ while True:
                     adatkezelo.ujkonyv(cim, szerzo, ev, kategoria)
                 elif valasztas == "2":
                     print("Beléptél az Könyvtári könyvek lekérdezése menübe")
+                    print("")
                     print("Az alábbi könyvek vannak állományban:")
 
-                    #----------ez kiírja a könyvek listáját, ebből függvényt kell csinálni
-                    konyv_lista=[]
-
-                    with open("konyvek.csv","r", encoding="utf-8") as f:
-                        sorok=f.read().splitlines()
-                        for sor in sorok[1::]:
-                            adat=sor.strip().split(",")
-                            
-                            konyvtar={}
-                            konyvtar["cim"]=adat[0]
-                            konyvtar["szerzo"]=adat[1]
-                            konyvtar["ev"]=int(adat[2])
-                            konyvtar["kategoria"]=adat[3]
-                            
-                            konyv_lista.append(konyvtar)
-
-                    print(f"{'Sorszám':<8} {'Cím':<25} {'Szerző':<20} {'Év':<5} {'Kategória':<15}")
-                    print("=" * 71)
-
+                    print(f"{'Sorszám':<8} {'Cím':<35} {'Szerző':<30} {'Év':<5} {'Kategória':<15} {'Törölve?':<10}")
+                    print("=" * 106)
                     sorszam = 1
-                    for k in konyv_lista:
-                        print(f"{sorszam:<8} {k['cim']:<25} {k['szerzo']:<20} {k['ev']:<5} {k['kategoria']:<15}")
+                    for k in adatkezelo.konyvtar_lista():
+                        print(f"{sorszam:<8} {k['cim']:<35} {k['szerzo']:<30} {k['ev']:<5} {k['kategoria']:<15} {('igen' if k['torolve'] == 1 else 'nem'):<10}")
                         sorszam += 1
-                    #----------ez kiírja a könyvek listáját
+                    print("")
 
                 elif valasztas == "3":
                     print("Beléptél az Állományból törlés menübe")
-                    
                     print("")
+
                     sorszam = int(input("Add meg a könyv számát a törléshez: "))
                 elif valasztas == "4":
                     print("Visszaléptél a Főmenűbe!")
+                    print("")
                     break
                 else:
                     print("Érvénytelen választás, próbáld újra!")
 
         elif valasztas == "2":
             print("Beléptél a Böngészés menübe")
+            print("")
             while True:
                 print("1. Keresés cím szerint")
                 print("2. Keresés szerző szerint")
@@ -86,9 +75,11 @@ while True:
                     kategoria = input("Add meg a keresett könyv kategóriáját: ")
                 elif valasztas == "5":
                     print("Visszaléptél a Főmenűbe!")
+                    print("")
                     break
                 else:
                     print("Érvénytelen választás, próbáld újra!")
+                    print("")
 
 
         elif valasztas == "3":
@@ -96,3 +87,4 @@ while True:
             break
         else:
             print("Érvénytelen választás, próbáld újra!")
+            print("")

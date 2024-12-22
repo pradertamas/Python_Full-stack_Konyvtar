@@ -51,7 +51,6 @@ def torles_af(sorszam):
         i += 1
 
     #print(f'{konyv_lista[sor]["cim"]},{konyv_lista[sor]["szerzo"]},{konyv_lista[sor]["ev"]},{konyv_lista[sor]["kategoria"]},{konyv_lista[sor]["aktiv"]}')
-    #adatkezelo.torles_ak(konyv_lista)
     adatkezelo.torles_ak(konyv_lista)
 
 

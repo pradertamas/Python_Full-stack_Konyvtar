@@ -8,3 +8,10 @@ def konyvtar_lista_ak():
     with open("konyvek.csv","r", encoding="utf-8") as f:
         konyvek=f.read().splitlines()
     return konyvek
+
+def torles_ak(konyv_lista):
+    with open("konyvek.csv","w", encoding="utf-8") as f:
+        f.write(f"cim,szerzo,ev,kategoria,aktiv\n")
+        for konyv in konyv_lista:
+            f.write(f'{konyv["cim"]},{konyv["szerzo"]},{konyv["ev"]},{konyv["kategoria"]},{konyv["aktiv"]}\n')
+    

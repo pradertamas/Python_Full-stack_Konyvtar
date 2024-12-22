@@ -1,5 +1,4 @@
 import adatfeldolgozas
-#import adatkezelo
 
 print("Ez egy könytarkezelő program")
 print("")
@@ -72,19 +71,72 @@ while True:
             while True:
                 print("1. Keresés cím szerint")
                 print("2. Keresés szerző szerint")
-                print("3. Keresés kiadás éve szerint")
-                print("4. Keresés kategória szerint")
+                print("3. Keresés kategória szerint")
+                print("4. A teljes állomány listázása")
                 print("5. Visszalépés")
                 valasztas = input("Válassz a fenti menüpontokból: ")
 
                 if valasztas == "1":
-                    cim = input("Add meg a keresett könyv címét: ")
+                    cim = input("Add meg a keresett könyv címét pontosan: ")
+                    if adatfeldolgozas.ker_cim_af(cim) == []:
+                        print("")
+                        print("Nincs ilyen című könyv!")
+                        print("")
+                    else:
+                        print("A cím szerinti keresés eredménye:")
+                        print("")
+                        print(f"{'Sorszám':<8} {'Cím':<35} {'Szerző':<30} {'Év':<5} {'Kategória':<15}")
+                        print("=" * 106)
+                        sorszam = 1
+                        for k in adatfeldolgozas.ker_cim_af(cim):
+                            print(f"{sorszam:<8} {k['cim']:<35} {k['szerzo']:<30} {k['ev']:<5} {k['kategoria']:<15}")
+                            sorszam += 1
+                        print("")
+
                 elif valasztas == "2":
                     szerzo = input("Add meg a keresett könyv szerzőjét: ")
+                    if adatfeldolgozas.ker_szerzo_af(szerzo) == []:
+                        print("")
+                        print("Nincs ilyen szerzőtől könyv!")
+                        print("")
+                    else:
+                        print("A szerző szerinti keresés eredménye:")
+                        print("")
+                        print(f"{'Sorszám':<8} {'Cím':<35} {'Szerző':<30} {'Év':<5} {'Kategória':<15}")
+                        print("=" * 106)
+                        sorszam = 1
+                        for k in adatfeldolgozas.ker_szerzo_af(szerzo):
+                            print(f"{sorszam:<8} {k['cim']:<35} {k['szerzo']:<30} {k['ev']:<5} {k['kategoria']:<15}")
+                            sorszam += 1
+                        print("")
+
                 elif valasztas == "3":
-                    ev = int(input("Add meg a keresett könyv kiadásának évét: "))
-                elif valasztas == "4":
                     kategoria = input("Add meg a keresett könyv kategóriáját: ")
+                    if adatfeldolgozas.ker_kategoria_af(kategoria) == []:
+                        print("")
+                        print("Nincs ilyen kategóriájú könyv!")
+                        print("")
+                    else:
+                        print("A kategória szerinti keresés eredménye:")
+                        print("")
+                        print(f"{'Sorszám':<8} {'Cím':<35} {'Szerző':<30} {'Év':<5} {'Kategória':<15}")
+                        print("=" * 106)
+                        sorszam = 1
+                        for k in adatfeldolgozas.ker_kategoria_af(kategoria):
+                            print(f"{sorszam:<8} {k['cim']:<35} {k['szerzo']:<30} {k['ev']:<5} {k['kategoria']:<15}")
+                            sorszam += 1
+                        print("")
+
+                elif valasztas == "4":
+                    print("5. A teljes állomány:")
+                    print("")
+                    print(f"{'Sorszám':<8} {'Cím':<35} {'Szerző':<30} {'Év':<5} {'Kategória':<15}")
+                    print("=" * 106)
+                    sorszam = 1
+                    for k in adatfeldolgozas.bongeszes_af():
+                        print(f"{sorszam:<8} {k['cim']:<35} {k['szerzo']:<30} {k['ev']:<5} {k['kategoria']:<15}")
+                        sorszam += 1
+                    print("")
                 elif valasztas == "5":
                     print("Visszaléptél a Főmenűbe!")
                     print("")

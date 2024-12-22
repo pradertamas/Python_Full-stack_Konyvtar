@@ -21,6 +21,7 @@ konyvek.csv - Az adatok tárolása
 
 Modulok és funkciók
 1. Felhasználói felület (UI modul) (Práder Tamás)
+
 Ez a modul kezeli az interakciót a felhasználóval. Meg kell jeleníteni a menüt, be kell kérni az adatokat, és továbbítani kell azokat az adatfeldolgozó modulnak. A válaszokat vissza kell adni a felhasználónak.
 
 Feladatok:
@@ -29,6 +30,7 @@ Menü megjelenítése: Ki kell írni a menü opcióit a print() függvény segí
 Visszacsatolás megjelenítése: Meg kell jeleníteni az adatfeldolgozó modul által visszaadott adatokat.
 
 2. Adatfeldolgozó modul  (Práder Tamás)
+
 Ez a modul felelős az feldolgozásáért és az adatkezelő modul hívásáért. Az adatokat vissza kell adni a felhasználói felület modulnak feldolgozás után.
 
 Feladatok:
@@ -36,6 +38,7 @@ Lekérdezések végrehajtása: Szűrni kell az adatokat a felhasználó igényei
 Törlési logika kezelése: A megsemmisült könyveket jelölni kell, de nem szabad véglegesen törölni.
 
 3. Adatkezelő modul  (Práder Tamás)
+
 Ez a modul felelős az adatok tárolásáért, kezeléséért és visszaadásáért. A CSV-fájl használatával kell kezelni az adatokat.
 
 Feladatok:
